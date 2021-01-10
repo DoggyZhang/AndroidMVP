@@ -6,10 +6,6 @@ import com.example.androidmvp.base.view.BaseView;
 
 import java.lang.ref.WeakReference;
 
-
-/**
- * Created by 阿飞 on 2017/3/27.
- */
 public class PresenterImpl<V extends BaseView> implements BasePresenter<V> {
 
     protected WeakReference<V> mView;

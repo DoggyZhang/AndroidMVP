@@ -2,10 +2,6 @@ package com.example.androidmvp.base;
 
 import java.util.Collection;
 
-/**
- * Created by 阿飞 on 2017/4/12.
- */
-
 public interface OnAdapterOperator<T> {
 
     void add(T item);

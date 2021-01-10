@@ -1,9 +1,5 @@
 package com.example.androidmvp.base.mode;
 
-/**
- * Created by 阿飞 on 2017/4/10.
- */
-
 public interface OnNightMode {
     /**
      * 是否使用夜间模式

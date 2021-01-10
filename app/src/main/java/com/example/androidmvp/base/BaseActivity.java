@@ -1,26 +1,26 @@
 package com.example.androidmvp.base;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.androidmvp.base.mode.OnNightMode;
 import com.example.androidmvp.base.presenter.impl.PresenterImpl;
 import com.example.androidmvp.base.view.BaseView;
 
 import butterknife.ButterKnife;
 
-public abstract class BaseActivity<P extends PresenterImpl>
-        extends Activity implements BaseView, OnNightMode {
+public abstract class BaseActivity<P extends PresenterImpl> extends AppCompatActivity implements BaseView {
 
     protected P mPresenter;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPresenter = setPresenter();
+        if (mPresenter == null) {
+            throw new RuntimeException("Presenter is null");
+        }
         mPresenter.attachView(this);
         resumeState(savedInstanceState);
         doBeforeContentView();

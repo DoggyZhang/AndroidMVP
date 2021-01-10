@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import com.example.androidmvp.base.presenter.impl.PresenterImpl;
 import com.example.androidmvp.base.view.BaseView;
 
+import org.jetbrains.annotations.NotNull;
+
 import butterknife.ButterKnife;
 
 public abstract class BaseFragment<P extends PresenterImpl> extends Fragment implements BaseView {
@@ -25,7 +27,7 @@ public abstract class BaseFragment<P extends PresenterImpl> extends Fragment imp
     protected boolean isInited = false;
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NotNull Context context) {
         super.onAttach(context);
         this.mActivity = (Activity) context;
         this.mContext = context;
